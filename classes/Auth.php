@@ -7,6 +7,7 @@ class Auth {
 
     public function __construct($db) {
         $this->conn = $db;
+        
     }
 
     public function login($username, $password) {
@@ -18,6 +19,9 @@ class Auth {
                   AND password='$password'";
 
         $result = mysqli_query($this->conn, $query);
+        var_dump($this->conn);
+        var_dump($result);
+        echo $query;
 
         return mysqli_num_rows($result);
     }

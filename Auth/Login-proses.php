@@ -6,7 +6,7 @@ include '../config/Database.php';
 include '../classes/Auth.php';
 
 $database = new Database();
-$db = $database->getConnection();
+$db = $database->connect();
 
 $auth = new Auth($db);
 
@@ -24,6 +24,7 @@ if($login > 0) {
 } else {
 
     echo "
+
     <script>
         alert('Login gagal');
         window.location='login.php';
